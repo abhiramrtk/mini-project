@@ -3,9 +3,13 @@ import 'report_complaint_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final VoidCallback onOpenComplaints;
+  final VoidCallback onOpenMap;
 
-  const HomeScreen({super.key, required this.onOpenComplaints});
-
+  const HomeScreen({
+    super.key,
+    required this.onOpenComplaints,
+    required this.onOpenMap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,8 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text("Hello, User", ),
-        
+        title: const Text("Hello, User"),
+
         centerTitle: true,
         actions: const [
           Padding(
@@ -55,18 +59,17 @@ class HomeScreen extends StatelessWidget {
             ),
 
             _menuButton(
-  color: Colors.blue,
-  icon: Icons.list,
-  text: "My Complaints",
-  onTap: onOpenComplaints,
-),
-
+              color: Colors.blue,
+              icon: Icons.list,
+              text: "My Complaints",
+              onTap: onOpenComplaints,
+            ),
 
             _menuButton(
               color: Colors.green,
               icon: Icons.location_on,
               text: "NearBy Complaints",
-              onTap: () {},
+              onTap: onOpenMap,
             ),
 
             _menuButton(
@@ -78,8 +81,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      
     );
   }
 

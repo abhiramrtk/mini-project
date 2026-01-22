@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kseb_connect/screens/profile_screen.dart';
 import 'home_screen.dart';
 import 'my_complaints_screen.dart';
+import 'map_screen.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -19,15 +20,23 @@ class _MainLayoutState extends State<MainLayout> {
 void initState() {
   super.initState();
   _screens = [
-    HomeScreen(onOpenComplaints: () {
+  HomeScreen(
+    onOpenComplaints: () {
       setState(() {
         _currentIndex = 1;
       });
-    }),
-    const MyComplaintsScreen(),
-    const Placeholder(),
-    const ProfileScreen(),
-  ];
+    },
+    onOpenMap: () {
+      setState(() {
+        _currentIndex = 2;
+      });
+    },
+  ),
+  const MyComplaintsScreen(),
+  const MapScreen(),     // ✅ REAL MAP
+  const ProfileScreen(),
+];
+
 }
 
 
