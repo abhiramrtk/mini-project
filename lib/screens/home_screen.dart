@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'report_complaint_screen.dart';
+import 'my_complaints_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 12),
             child: Icon(Icons.notifications),
-          )
+          ),
         ],
       ),
 
@@ -30,8 +31,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            const Text("Location: westhill",
-                style: TextStyle(color: Colors.grey)),
+            const Text(
+              "Location: westhill",
+              style: TextStyle(color: Colors.grey),
+            ),
             const SizedBox(height: 30),
 
             _menuButton(
@@ -52,7 +55,12 @@ class HomeScreen extends StatelessWidget {
               color: Colors.blue,
               icon: Icons.list,
               text: "My Complaints",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const MyComplaintsScreen()),
+                );
+              },
             ),
 
             _menuButton(
@@ -101,8 +109,10 @@ class HomeScreen extends StatelessWidget {
           style: ElevatedButton.styleFrom(backgroundColor: color),
           onPressed: onTap,
           icon: Icon(icon, color: Colors.white),
-          label: Text(text,
-              style: const TextStyle(color: Colors.white, fontSize: 16)),
+          label: Text(
+            text,
+            style: const TextStyle(color: Colors.white, fontSize: 16),
+          ),
         ),
       ),
     );
