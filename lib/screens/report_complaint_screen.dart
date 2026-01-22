@@ -28,13 +28,13 @@ class _ReportComplaintScreenState extends State<ReportComplaintScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _dropdown("Select Complaint Type", complaintType,
-                ["Power Failure", "Low Voltage", "Transformer Issue"],
+                ["Personal","Community"],
                 (v) => setState(() => complaintType = v)),
 
             const SizedBox(height: 15),
 
             _dropdown("Category", category,
-                ["Residential", "Commercial", "Street Light"],
+                ["Power Failure", "Low Voltage", "Transformer Issue"],
                 (v) => setState(() => category = v)),
 
             const SizedBox(height: 15),

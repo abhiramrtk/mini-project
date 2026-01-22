@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'package:kseb_connect/screens/main_layout.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -102,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => const HomeScreen()),
+                          builder: (_) => const MainLayout()),
                     );
                   },
                   child: const Text("Continue",

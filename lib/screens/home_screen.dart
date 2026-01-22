@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'report_complaint_screen.dart';
-import 'my_complaints_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final VoidCallback onOpenComplaints;
+
+  const HomeScreen({super.key, required this.onOpenComplaints});
+
 
   @override
   Widget build(BuildContext context) {
@@ -52,16 +54,12 @@ class HomeScreen extends StatelessWidget {
             ),
 
             _menuButton(
-              color: Colors.blue,
-              icon: Icons.list,
-              text: "My Complaints",
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const MyComplaintsScreen()),
-                );
-              },
-            ),
+  color: Colors.blue,
+  icon: Icons.list,
+  text: "My Complaints",
+  onTap: onOpenComplaints,
+),
+
 
             _menuButton(
               color: Colors.green,
@@ -80,17 +78,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: const Color(0xFF0D3B66),
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Complaints"),
-          BottomNavigationBarItem(icon: Icon(Icons.map), label: "Map"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
-      ),
+      
     );
   }
 

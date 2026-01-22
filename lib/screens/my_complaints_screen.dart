@@ -54,17 +54,7 @@ class MyComplaintsScreen extends StatelessWidget {
         ],
       ),
 
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
-        selectedItemColor: const Color(0xFF0D3B66),
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Complaints"),
-          BottomNavigationBarItem(icon: Icon(Icons.map), label: "Map"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
-      ),
+      
     );
   }
 }
